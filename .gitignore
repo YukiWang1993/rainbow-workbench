@@ -1,0 +1,12 @@
+.codeact/
+.skills/
+基础设定/
+SECRET.md
+MEMORY.md
+USER.md
+recent_memory/
+codeact/
+*.py
+*.json
+*.log
+__pycache__/
