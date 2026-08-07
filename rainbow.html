@@ -60,7 +60,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="header">
   <h1>🌈 彩虹成长工作台</h1>
   <div class="date" id="headerDate"></div>
-  <div style="text-align:center;margin-top:6px"><button class="btn btn-add" onclick="syncFromCloud()" style="font-size:12px;padding:4px 14px">🔄 拉取云端</button> <button class="btn btn-add" onclick="uploadToCloud()" style="font-size:12px;padding:4px 14px">☁️ 推送到云端</button></div>
+  <div style="text-align:center;margin-top:6px;font-size:11px;color:#aaa">数据保存在浏览器本地</div>
 </div>
 <div class="card-grid" id="app"></div>
 <div class="footer">💡 点击 ✏️ 编辑 · 数据保存在浏览器中 · <span class="reset" onclick="resetAll()">重置数据</span></div>
@@ -199,18 +199,6 @@ if(!data.dailyBriefs){data.dailyBriefs=JSON.parse(JSON.stringify(DEFAULT.dailyBr
 if(!data.weeklyReports){data.weeklyReports=JSON.parse(JSON.stringify(DEFAULT.weeklyReports));save();}
 if(!data.monthlyReports){data.monthlyReports=JSON.parse(JSON.stringify(DEFAULT.monthlyReports));save();}
 function save(){localStorage.setItem('rainbow_wb',JSON.stringify(data));}
-function uploadToCloud(){
-  data.updated = new Date().toISOString();
-  toast("上传中...");
-  fetch(SYNC_URL,{
-    method:'PUT',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(data)
-  }).then(function(r){
-    if(r.ok){lastSync=data.updated;localStorage.setItem('rainbow_last_sync',lastSync);toast("已上传云端 ✅");}
-    else{toast("上传失败");}
-  }).catch(function(){toast("网络不通");});
-}
 function resetAll(){if(confirm('确定要重置所有数据为默认值吗？')){data=JSON.parse(JSON.stringify(DEFAULT));save();render();}}
 
 // ========== Toast ==========
@@ -734,126 +722,8 @@ function editWords(){
   document.getElementById('modal').classList.add('show');
 }
 
-// ========== 云端同步 ==========
-var SYNC_URL = "https://jsonblob.com/api/jsonBlob/019fdc21-1cf8-7d0c-98a4-05b801fe14ff";
-var lastSync = localStorage.getItem("rainbow_last_sync") || "";
-function syncFromCloud() {
-  toast("同步中...");
-  fetch(SYNC_URL)
-    .then(function(r) { return r.json(); })
-    .then(function(remote) {
-      if (!remote || !remote.updated) { toast("同步失败"); return; }
-      if (remote.updated === lastSync) { toast("已是最新 ✅"); return; }
-      var count = 0;
-      // 合并睡眠
-      remote.sleep.forEach(function(s) {
-        if (!data.sleep.find(function(l) { return l.date === s.date; })) {
-          data.sleep.push(s); count++;
-        }
-      });
-      // 合并SSS
-      remote.sss.forEach(function(s) {
-        if (!data.sss.find(function(l) { return l.date === s.date; })) {
-          data.sss.push(s); count++;
-        }
-      });
-      // 合并阅读
-      remote.reading.forEach(function(s) {
-        if (!data.reading.find(function(l) { return l.date === s.date; })) {
-          data.reading.push(s); count++;
-        }
-      });
-      // 合并在园
-      remote.school.forEach(function(s) {
-        if (!data.school.find(function(l) { return l.date === s.date; })) {
-          data.school.push(s); count++;
-        }
-      });
-      // 合并里程碑
-      remote.milestones.forEach(function(s) {
-        if (!data.milestones.find(function(l) { return l.date === s.date && l.text === s.text; })) {
-          data.milestones.push(s); count++;
-        }
-      });
-      // 合并绘本库
-      remote.library.forEach(function(s) {
-        if (!data.library.find(function(l) { return l.name === s.name; })) {
-          data.library.push(s); count++;
-        }
-      });
-      // 合并玩具
-      remote.toys.forEach(function(s) {
-        if (!data.toys.find(function(l) { return l.name === s.name; })) {
-          data.toys.push(s); count++;
-        }
-      });
-      // 合并生长数据
-      if(remote.growth){
-        if(!data.growth) data.growth=[];
-        remote.growth.forEach(function(s) {
-          if (!data.growth.find(function(l) { return l.date === s.date; })) {
-            data.growth.push(s); count++;
-          }
-        });
-      }
-      // 合并单词
-      if(remote.words){
-        if(!data.words) data.words=[];
-        remote.words.forEach(function(s) {
-          if (!data.words.find(function(l) { return l.date === s.date && l.word === s.word; })) {
-            data.words.push(s); count++;
-          }
-        });
-      }
-      // 合并每日小纸条
-      if(remote.dailyNotes){
-        if(!data.dailyNotes) data.dailyNotes=[];
-        remote.dailyNotes.forEach(function(s) {
-          if (!data.dailyNotes.find(function(l) { return l.date === s.date; })) {
-            data.dailyNotes.unshift(s); count++;
-          }
-        });
-      }
-      // 合并每日简报
-      if(remote.dailyBriefs){
-        if(!data.dailyBriefs) data.dailyBriefs=[];
-        remote.dailyBriefs.forEach(function(s) {
-          if (!data.dailyBriefs.find(function(l) { return l.date === s.date; })) {
-            data.dailyBriefs.unshift(s); count++;
-          }
-        });
-      }
-      // 合并周报
-      if(remote.weeklyReports){
-        if(!data.weeklyReports) data.weeklyReports=[];
-        remote.weeklyReports.forEach(function(s) {
-          if (!data.weeklyReports.find(function(l) { return l.week === s.week; })) {
-            data.weeklyReports.push(s); count++;
-          }
-        });
-      }
-      // 合并月报
-      if(remote.monthlyReports){
-        if(!data.monthlyReports) data.monthlyReports=[];
-        remote.monthlyReports.forEach(function(s) {
-          if (!data.monthlyReports.find(function(l) { return l.month === s.month; })) {
-            data.monthlyReports.push(s); count++;
-          }
-        });
-      }
-      lastSync = remote.updated;
-      localStorage.setItem("rainbow_last_sync", lastSync);
-      save();
-      render();
-      toast("已同步 " + count + " 条新记录 ✅");
-    })
-    .catch(function() { toast("网络不通，稍后再试"); });
-}
-
 // ========== 启动 ==========
 render();
-// 自动同步检查
-setTimeout(function() { if (lastSync) syncFromCloud(); }, 2000);
 </script>
 </body>
 </html>
