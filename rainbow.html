@@ -474,7 +474,7 @@ function render(){
   // 绘本库（可折叠）
   h+='<div class="card full"><h3>📖 绘本库 <span class="btns"><button class="btn btn-add" onclick="addBook()">+</button></span></h3>';
   h+='<div class="stat-row"><span>在架</span><span class="stat-val">'+d.library.length+'本</span></div>';
-  h+='<div id="libraryList">';
+  h+='<div id="libraryList" style="display:none">';
   d.library.forEach(function(b,i){
     var author=b.author?' · '+esc(b.author):'';
     var series=b.series?' · '+esc(b.series):'';
@@ -482,7 +482,7 @@ function render(){
     h+='<div class="stat-row"><span>'+esc(b.name)+author+series+love+'</span><span style="font-size:10px;color:#999;cursor:pointer" onclick="editBook('+i+')">✏️</span></div>';
   });
   h+='</div>';
-  h+='<div style="margin-top:6px"><button onclick="var t=document.getElementById(\'libraryList\');if(t.style.display==\'none\'){t.style.display=\'\';this.textContent=\'📚 收起列表 ▾\';}else{t.style.display=\'none\';this.textContent=\'📚 展开列表 ▸\';}" style="border:none;background:#f3f4f6;color:#666;padding:4px 12px;border-radius:20px;font-size:11px;cursor:pointer">📚 收起列表 ▾</button></div>';
+  h+='<div style="margin-top:6px"><button onclick="var t=document.getElementById(\'libraryList\');if(t.style.display==\'none\'){t.style.display=\'\';this.textContent=\'📚 收起列表 ▾\';}else{t.style.display=\'none\';this.textContent=\'📚 展开列表 ▸\';}" style="border:none;background:#f3f4f6;color:#666;padding:4px 12px;border-radius:20px;font-size:11px;cursor:pointer">📚 展开列表 ▸</button></div>';
   h+='</div>';
 
   // 周报
