@@ -102,7 +102,7 @@ const DEFAULT = {
     {date:"2026-08-04",books:"独行侠艾瑞克、呀屁股、各种各样的家"}
   ],
   school:[
-    {date:"2026-08-07",theme:"立秋·新朋友",books:"",pe:"",note:"😊 高兴 社交活跃"},
+    {date:"2026-08-07",theme:"立秋·新朋友",books:"",pe:"精细动作·海底捞针",note:"😊 高兴 社交活跃 | 午睡1h30m | 饮水360ml | 刷牙✓"},
     {date:"2026-08-06",theme:"立秋·拓秋",books:"声律启蒙、三字经、工程车、一个小老头、大风吹、太空小狮子迪斯科",pe:"精细动作·夹毛球",note:"😊高兴 社交活跃 | 午睡✗ | 大便1次 | 饮水370ml | 早餐1/3 早点✓ 午餐3/4 午点✓ 晚餐2/3"},
     {date:"2026-08-05",theme:"立秋",books:"蚂蚁和西瓜、杜噜嘟嘟",pe:"运球高手",note:"情绪👍 社交乐于互动"},
     {date:"2026-08-04",theme:"立秋·摘秋",books:"羚羚羊的网络诈骗",pe:"摘秋",note:"入园哭（忘带书包）"},
@@ -185,20 +185,26 @@ const DEFAULT = {
 };
 
 // ========== 数据管理 ==========
-let data = JSON.parse(localStorage.getItem('rainbow_wb')||'null');
-if(!data){data=JSON.parse(JSON.stringify(DEFAULT));save();}
-// 确保旧数据也有 growth 字段
-if(!data.growth){data.growth=JSON.parse(JSON.stringify(DEFAULT.growth));save();}
-// 确保旧数据也有 words 字段
-if(!data.words){data.words=JSON.parse(JSON.stringify(DEFAULT.words));save();}
-// 旧数据迁移：words 无 status 字段时补默认值
-if(data.words&&data.words.length&&!data.words[0].hasOwnProperty('status')){data.words.forEach(function(w){w.status=w.status||'learning';});save();}
-// 确保新增字段存在
-if(!data.dailyNotes){data.dailyNotes=JSON.parse(JSON.stringify(DEFAULT.dailyNotes));save();}
-if(!data.dailyBriefs){data.dailyBriefs=JSON.parse(JSON.stringify(DEFAULT.dailyBriefs));save();}
-if(!data.weeklyReports){data.weeklyReports=JSON.parse(JSON.stringify(DEFAULT.weeklyReports));save();}
-if(!data.monthlyReports){data.monthlyReports=JSON.parse(JSON.stringify(DEFAULT.monthlyReports));save();}
+const DATA_URL='https://raw.githubusercontent.com/YukiWang1993/rainbow-workbench/main/rainbow_data.json';
+let data=null;
+async function loadData(){
+  var local=JSON.parse(localStorage.getItem('rainbow_wb')||'null');
+  try{
+    var resp=await fetch(DATA_URL+'?t='+Date.now());
+    if(resp.ok){data=await resp.json();localStorage.setItem('rainbow_wb',JSON.stringify(data));return;}
+  }catch(e){}
+  if(local){data=local;}else{data=JSON.parse(JSON.stringify(DEFAULT));save();}
+}
 function save(){localStorage.setItem('rainbow_wb',JSON.stringify(data));}
+function ensureFields(){
+  if(!data.growth){data.growth=JSON.parse(JSON.stringify(DEFAULT.growth));save();}
+  if(!data.words){data.words=JSON.parse(JSON.stringify(DEFAULT.words));save();}
+  if(data.words&&data.words.length&&!data.words[0].hasOwnProperty('status')){data.words.forEach(function(w){w.status=w.status||'learning';});save();}
+  if(!data.dailyNotes){data.dailyNotes=JSON.parse(JSON.stringify(DEFAULT.dailyNotes));save();}
+  if(!data.dailyBriefs){data.dailyBriefs=JSON.parse(JSON.stringify(DEFAULT.dailyBriefs));save();}
+  if(!data.weeklyReports){data.weeklyReports=JSON.parse(JSON.stringify(DEFAULT.weeklyReports));save();}
+  if(!data.monthlyReports){data.monthlyReports=JSON.parse(JSON.stringify(DEFAULT.monthlyReports));save();}
+}
 function resetAll(){if(confirm('确定要重置所有数据为默认值吗？')){data=JSON.parse(JSON.stringify(DEFAULT));save();render();}}
 
 // ========== Toast ==========
@@ -723,7 +729,7 @@ function editWords(){
 }
 
 // ========== 启动 ==========
-render();
+loadData().then(function(){ensureFields();render();});
 </script>
 </body>
 </html>
