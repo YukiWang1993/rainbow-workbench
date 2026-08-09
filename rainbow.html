@@ -339,11 +339,19 @@ function render(){
   // 睡眠
   h+='<div class="card"><h3>😴 睡眠 <span class="btns"><button class="btn btn-add" onclick="addSleep()">+</button></span></h3>';
   h+='<div class="sleep-bars">';
+  // 动态比例：根据实际数据的最小/最大分钟数，映射到 20-70px
+  var sleepMins = d.sleep.map(function(s){
+    var m = calcSleepTotal(s).match(/(\d+)h(\d+)m/);
+    return m ? parseInt(m[1])*60+parseInt(m[2]) : 0;
+  }).filter(function(v){return v>0;});
+  var minM = Math.min.apply(null, sleepMins);
+  var maxM = Math.max.apply(null, sleepMins);
+  var rangeM = maxM - minM || 1;
   d.sleep.forEach(function(s){
     var t=calcSleepTotal(s);
     var m=t.match(/(\d+)h(\d+)m/);
     var totalM=m?parseInt(m[1])*60+parseInt(m[2]):0;
-    var hh=m?Math.max(14,Math.min(70,Math.round(totalM*70/700))):30;
+    var hh=m?Math.max(20,Math.round(20 + (totalM-minM)*50/rangeM)):30;
     h+='<div style="text-align:center"><div class="sleep-bar" style="height:'+hh+'px">'+t+'</div><div class="sleep-label">'+s.date.slice(5)+'</div></div>';
   });
   h+='</div><div style="margin-top:8px;font-size:12px;color:#7f8c8d">日均 '+avgSleep()+'</div>';
