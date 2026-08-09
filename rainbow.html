@@ -35,7 +35,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .tag.pink{background:#fce7f3;color:#9d174d}
 .milestone{background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fbbf24;border-radius:10px;padding:10px 12px;margin:8px 0;font-size:13px}
 .milestone .ms-date{font-size:11px;color:#b45309}
-.sleep-bars{display:flex;gap:6px;align-items:flex-end;height:60px;overflow-x:auto}
+.sleep-bars{display:flex;gap:6px;align-items:flex-end;height:70px;overflow-x:auto}
 .sleep-bar{flex:0 0 50px;background:linear-gradient(180deg,#a29bfe,#6c5ce7);border-radius:6px 6px 2px 2px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:2px;font-size:9px;color:#fff;min-height:12px}
 .sleep-label{font-size:9px;color:#7f8c8d;text-align:center;margin-top:2px}
 .empty{color:#ccc;font-size:12px;text-align:center;padding:12px}
@@ -343,7 +343,7 @@ function render(){
     var t=calcSleepTotal(s);
     var m=t.match(/(\d+)h(\d+)m/);
     var totalM=m?parseInt(m[1])*60+parseInt(m[2]):0;
-    var hh=m?Math.max(14,Math.min(60,Math.round(totalM*60/720))):30;
+    var hh=m?Math.max(14,Math.min(70,Math.round(totalM*70/700))):30;
     h+='<div style="text-align:center"><div class="sleep-bar" style="height:'+hh+'px">'+t+'</div><div class="sleep-label">'+s.date.slice(5)+'</div></div>';
   });
   h+='</div><div style="margin-top:8px;font-size:12px;color:#7f8c8d">日均 '+avgSleep()+'</div>';
