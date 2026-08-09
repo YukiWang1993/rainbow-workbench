@@ -342,7 +342,8 @@ function render(){
   d.sleep.forEach(function(s){
     var t=calcSleepTotal(s);
     var m=t.match(/(\d+)h(\d+)m/);
-    var hh=m?Math.max(14,Math.min(60,Math.round(parseInt(m[1])*5+parseInt(m[2])/3))):30;
+    var totalM=m?parseInt(m[1])*60+parseInt(m[2]):0;
+    var hh=m?Math.max(14,Math.min(60,Math.round(totalM*60/720))):30;
     h+='<div style="text-align:center"><div class="sleep-bar" style="height:'+hh+'px">'+t+'</div><div class="sleep-label">'+s.date.slice(5)+'</div></div>';
   });
   h+='</div><div style="margin-top:8px;font-size:12px;color:#7f8c8d">日均 '+avgSleep()+'</div>';
