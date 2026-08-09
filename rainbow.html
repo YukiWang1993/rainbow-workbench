@@ -339,15 +339,16 @@ function render(){
 
   // 睡眠
   h+='<div class="card"><h3>😴 睡眠 <span class="btns"><button class="btn btn-add" onclick="addSleep()">+</button></span></h3>';
+  var recentSleep = d.sleep.slice(0,3);
   h+='<div class="sleep-bars">';
-  d.sleep.forEach(function(s){
+  recentSleep.forEach(function(s){
     var t=calcSleepTotal(s);
     var m=t.match(/(\d+)h(\d+)m/);
     var hh=m?Math.max(14,Math.min(60,Math.round(parseInt(m[1])*5+parseInt(m[2])/3))):30;
     h+='<div class="sleep-bar" style="height:'+hh+'px">'+t+'</div>';
   });
   h+='</div><div class="sleep-labels">';
-  d.sleep.forEach(function(s){
+  recentSleep.forEach(function(s){
     h+='<div class="sleep-label">'+s.date.slice(5)+'</div>';
   });
   h+='</div><div style="margin-top:8px;font-size:12px;color:#7f8c8d">日均 '+avgSleep()+'</div>';
