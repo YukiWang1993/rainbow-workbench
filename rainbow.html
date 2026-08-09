@@ -388,6 +388,7 @@ function render(){
   if(d.dailyNotes && d.dailyNotes.length){
     d.dailyNotes.sort(function(a,b){return a.date<b.date?1:-1;});
     var latest = d.dailyNotes[0];
+    for(var i=0;i<d.dailyNotes.length;i++){if(d.dailyNotes[i].content&&d.dailyNotes[i].content.length>15){latest=d.dailyNotes[i];break;}}
     h+='<div class="card full"><h3>📝 小纸条 <span class="btns"><button class="btn btn-add" onclick="addDailyNote()">+</button></span></h3>';
     h+='<div style="font-size:11px;color:#999;margin-bottom:4px">'+latest.date+'</div>';
     h+='<div style="background:#fefce8;border-radius:10px;padding:10px;font-size:13px;line-height:1.6">'+esc(latest.content).replace(/\n/g,'<br>')+'</div>';
@@ -398,6 +399,7 @@ function render(){
   if(d.dailyBriefs && d.dailyBriefs.length){
     d.dailyBriefs.sort(function(a,b){return a.date<b.date?1:-1;});
     var latestB = d.dailyBriefs[0];
+    for(var i=0;i<d.dailyBriefs.length;i++){if(d.dailyBriefs[i].content&&d.dailyBriefs[i].content.length>15){latestB=d.dailyBriefs[i];break;}}
     h+='<div class="card full"><h3>📋 简报 <span class="btns"><button class="btn btn-add" onclick="addDailyBrief()">+</button></span></h3>';
     h+='<div style="font-size:11px;color:#999;margin-bottom:4px">'+latestB.date+'</div>';
     h+='<div style="background:#eff6ff;border-radius:10px;padding:10px;font-size:13px;line-height:1.6">'+esc(latestB.content).replace(/\n/g,'<br>')+'</div>';
