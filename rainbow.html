@@ -339,7 +339,7 @@ function render(){
 
   // 睡眠
   h+='<div class="card"><h3>😴 睡眠 <span class="btns"><button class="btn btn-add" onclick="addSleep()">+</button></span></h3>';
-  var recentSleep = d.sleep.slice(0,3);
+  var recentSleep = d.sleep.slice(0,7);
   h+='<div class="sleep-bars">';
   recentSleep.forEach(function(s){
     var t=calcSleepTotal(s);
