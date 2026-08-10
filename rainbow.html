@@ -332,7 +332,7 @@ function render(){
   // 今日概览
   h+='<div class="card full"><h3>📋 今日概览 <span class="btns"><button class="btn btn-edit" onclick="editToday()">✏️</button></span></h3>';
   h+='<div class="stat-row"><span>起床</span><span class="stat-val">'+esc(d.today.wake)+'</span></div>';
-  h+='<div class="stat-row"><span>昨晚入睡</span><span class="stat-val">'+esc(d.sleep.length>0?d.sleep[0].sleep:'')+'</span></div>';
+  h+='<div class="stat-row"><span>'+(d.today.sleep?'今晚入睡':'昨晚入睡')+'</span><span class="stat-val">'+esc(d.today.sleep||(d.sleep.length>0?d.sleep[0].sleep:''))+'</span></div>';
   h+='<div class="stat-row"><span>今日儿歌</span><span class="stat-val">'+esc(d.today.songs)+'</span></div>';
   h+='<div class="stat-row"><span>今早绘本</span><span class="stat-val">'+esc(d.today.book)+'</span></div>';
   h+='<div class="stat-row"><span>今日状态</span><span class="stat-val">'+esc(d.today.status)+'</span></div></div>';
@@ -532,7 +532,7 @@ function render(){
 function editToday(){
   showModal('编辑今日概览',[
     {key:'wake',label:'起床时间',value:data.today.wake},
-    {key:'sleep',label:'昨晚入睡',value:data.today.sleep},
+    {key:'sleep',label:'入睡时间',value:data.today.sleep},
     {key:'songs',label:'今日儿歌',value:data.today.songs},
     {key:'book',label:'今早绘本',value:data.today.book},
     {key:'status',label:'今日状态',value:data.today.status}
