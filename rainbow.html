@@ -256,6 +256,7 @@ function avgSleep(){
   return Math.floor(avg/60)+'h'+Math.round(avg%60)+'m';
 }
 function isRecent(ds,days){var d=new Date(ds);var n=new Date();return(n-d)/86400000<=days;}
+function isThisWeek(ds){var d=new Date(ds+'T00:00:00+08:00');var n=new Date();var day=n.getDay();var monday=new Date(n);monday.setDate(n.getDate()-(day===0?6:day-1));monday.setHours(0,0,0,0);return d>=monday;}
 
 function calcSleepTotal(s){
   if(s.total && s.total!=='')return s.total;
