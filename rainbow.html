@@ -353,7 +353,7 @@ function render(){
     h+='<div class="sleep-label">'+s.date.slice(5)+'</div>';
   });
   h+='</div><div style="margin-top:8px;font-size:12px;color:#7f8c8d">日均 '+avgSleep()+'</div>';
-  d.sleep.slice(0,3).forEach(function(s,i){
+  d.sleep.slice(0,7).forEach(function(s,i){
     h+='<div class="stat-row" style="font-size:11px"><span>'+s.date.slice(5)+'</span><span>'+calcSleepTotal(s)+'</span><span style="font-size:10px;color:#999;cursor:pointer" onclick="editSleep('+i+')">✏️</span></div>';
   });
   h+='</div>';
