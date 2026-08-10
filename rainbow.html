@@ -379,9 +379,9 @@ function render(){
   });
   h+='</div>';
 
-  // 在园（最近7天）
+  // 在园（本周）
   h+='<div class="card full"><h3>🏫 在园记录 <span class="btns"><button class="btn btn-add" onclick="addSchool()">+</button></span></h3>';
-  var recentSchool = d.school.filter(function(s){return isRecent(s.date,7);}).sort(function(a,b){return b.date.localeCompare(a.date);});
+  var recentSchool = d.school.filter(function(s){return isThisWeek(s.date);}).sort(function(a,b){return b.date.localeCompare(a.date);});
   if(!recentSchool.length)h+='<div class="empty">暂无</div>';
   recentSchool.forEach(function(s,i){
     var idx = d.school.indexOf(s);
