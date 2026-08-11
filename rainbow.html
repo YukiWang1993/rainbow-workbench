@@ -546,7 +546,10 @@ async function fetchBriefing(){
     var content=document.getElementById('briefingContent');
     if(!el||!content)return;
     content.innerHTML=renderMarkdown(md);
+    content.style.display='';
     el.style.display='';
+    var btn=document.getElementById('briefingBtn');
+    if(btn)btn.textContent='收起 ▾';
   }catch(e){}
 }
 
@@ -560,7 +563,10 @@ async function fetchNote(){
     var content=document.getElementById('noteContent');
     if(!el||!content)return;
     content.innerHTML=renderMarkdown(md);
+    content.style.display='';
     el.style.display='';
+    var btn=document.getElementById('noteBtn');
+    if(btn)btn.textContent='收起 ▾';
   }catch(e){}
 }
 
