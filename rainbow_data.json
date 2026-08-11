@@ -604,7 +604,8 @@
     {
       "date": "2026-08-10",
       "word": "peas",
-      "status": "mastered"
+      "status": "mastered",
+      "mnemonic": "吃了豌豆要打屁——屁事peas"
     },
     {
       "date": "2026-08-10",
@@ -619,12 +620,14 @@
     {
       "date": "2026-08-11",
       "word": "boat",
-      "status": "learning"
+      "status": "learning",
+      "mnemonic": "双手合十像小船漂，嘴里波波波——波特船boat"
     },
     {
       "date": "2026-08-11",
       "word": "house",
-      "status": "learning"
+      "status": "learning",
+      "mnemonic": "双手搭尖屋顶——好房子house"
     }
   ],
   "today": {
