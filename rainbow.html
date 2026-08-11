@@ -530,9 +530,8 @@ function renderMarkdown(md){
   h=h.replace(/^- (.+)$/gm,'<li style="margin-left:12px;line-height:1.7">$1</li>');
   // 包裹连续列表
   h=h.replace(/(<li[^>]*>.*?<\/li>\s*)+/g,'<ul style="list-style:none;padding:0;margin:4px 0">$&</ul>');
-  // 换行
-  h=h.replace(/\n\n/g,'<br>');
-  h=h.replace(/\n/g,'<br>');
+  // 换行：仅段落间空行转<br>，单换行保留自然流排
+  h=h.replace(/\n{2,}/g,'<br>');
   return h;
 }
 
