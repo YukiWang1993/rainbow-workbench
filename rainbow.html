@@ -560,7 +560,7 @@ function renderMarkdown(md){
 
 async function fetchBriefing(){
   try{
-    var r=await fetch('最新简报.md');
+    var r=await fetch('latest_briefing.md');
     if(!r.ok)return;
     var md=await r.text();
     if(!md||md.trim().length<10)return;
@@ -574,7 +574,7 @@ async function fetchBriefing(){
 
 async function fetchNote(){
   try{
-    var r=await fetch('最新小纸条.md');
+    var r=await fetch('latest_note.md');
     if(!r.ok)return;
     var md=await r.text();
     if(!md||md.trim().length<10)return;
