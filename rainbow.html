@@ -338,6 +338,14 @@ function render(){
   h+='<div class="stat-row"><span>今早绘本</span><span class="stat-val">'+esc(d.today.book)+'</span></div>';
   h+='<div class="stat-row"><span>今日状态</span><span class="stat-val">'+esc(d.today.status)+'</span></div></div>';
 
+  // 📅 今日简报（从 GitHub Pages 获取最新简报.md）
+  h+='<div class="card full" id="briefingCard" style="display:none"><h3>📅 今日简报 <span class="btns"><button class="btn btn-edit" onclick="toggleBriefing()" id="briefingBtn">展开 ▸</button></span></h3>';
+  h+='<div id="briefingContent" style="display:none;background:#eff6ff;border-radius:10px;padding:10px;font-size:13px;line-height:1.6"></div></div>';
+
+  // 🕯️ 睡前小纸条（从 GitHub Pages 获取最新小纸条.md）
+  h+='<div class="card full" id="noteCard" style="display:none"><h3>🕯️ 睡前小纸条 <span class="btns"><button class="btn btn-edit" onclick="toggleNote()" id="noteBtn">展开 ▸</button></span></h3>';
+  h+='<div id="noteContent" style="display:none;background:#fefce8;border-radius:10px;padding:10px;font-size:13px;line-height:1.6"></div></div>';
+
   // 睡眠
   h+='<div class="card"><h3>😴 睡眠 <span class="btns"><button class="btn btn-add" onclick="addSleep()">+</button></span></h3>';
   var recentSleep = d.sleep.slice(0,3);
@@ -527,6 +535,79 @@ function render(){
   document.getElementById('app').innerHTML=h;
   document.getElementById('headerDate').textContent=new Date().toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'})+' · 3岁2个月';
   setTimeout(function(){renderGrowthChart();},100);
+  // 异步加载简报和小纸条
+  fetchBriefing();
+  fetchNote();
+}
+
+// ========== 简报/小纸条获取与渲染 ==========
+function renderMarkdown(md){
+  if(!md)return'';
+  var h=md;
+  // 粗体
+  h=h.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  // 水平线
+  h=h.replace(/^---$/gm,'<hr style="border:none;border-top:1px dashed #ddd;margin:8px 0">');
+  // 列表项
+  h=h.replace(/^- (.+)$/gm,'<li style="margin-left:12px;line-height:1.7">$1</li>');
+  // 包裹连续列表
+  h=h.replace(/(<li[^>]*>.*?<\/li>\s*)+/g,'<ul style="list-style:none;padding:0;margin:4px 0">$&</ul>');
+  // 换行
+  h=h.replace(/\n\n/g,'<br>');
+  h=h.replace(/\n/g,'<br>');
+  return h;
+}
+
+async function fetchBriefing(){
+  try{
+    var r=await fetch('最新简报.md');
+    if(!r.ok)return;
+    var md=await r.text();
+    if(!md||md.trim().length<10)return;
+    var el=document.getElementById('briefingCard');
+    var content=document.getElementById('briefingContent');
+    if(!el||!content)return;
+    content.innerHTML=renderMarkdown(md);
+    el.style.display='';
+  }catch(e){}
+}
+
+async function fetchNote(){
+  try{
+    var r=await fetch('最新小纸条.md');
+    if(!r.ok)return;
+    var md=await r.text();
+    if(!md||md.trim().length<10)return;
+    var el=document.getElementById('noteCard');
+    var content=document.getElementById('noteContent');
+    if(!el||!content)return;
+    content.innerHTML=renderMarkdown(md);
+    el.style.display='';
+  }catch(e){}
+}
+
+function toggleBriefing(){
+  var content=document.getElementById('briefingContent');
+  var btn=document.getElementById('briefingBtn');
+  if(content.style.display==='none'){
+    content.style.display='';
+    btn.textContent='收起 ▾';
+  }else{
+    content.style.display='none';
+    btn.textContent='展开 ▸';
+  }
+}
+
+function toggleNote(){
+  var content=document.getElementById('noteContent');
+  var btn=document.getElementById('noteBtn');
+  if(content.style.display==='none'){
+    content.style.display='';
+    btn.textContent='收起 ▾';
+  }else{
+    content.style.display='none';
+    btn.textContent='展开 ▸';
+  }
 }
 
 // ========== 编辑函数 ==========
