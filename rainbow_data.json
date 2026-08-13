@@ -64,6 +64,13 @@
   ],
   "sleep": [
     {
+      "date": "2026-08-13",
+      "sleep": "22:24",
+      "wake": "07:58",
+      "nap": "55m",
+      "total": "10h29m"
+    },
+    {
       "date": "2026-08-12",
       "sleep": "21:45",
       "wake": "07:58",
@@ -716,11 +723,11 @@
   ],
   "today": {
     "wake": "07:58",
-    "sleep": "",
+    "sleep": "22:24",
     "songs": "",
     "book": "熊熊面包店最特别的面包（全套3本）、超级故事王",
     "words": "car, mouse, beans | orange✅",
-    "status": "☀️ 7:58起床 | 📚 熊熊面包店+超级故事王 | 🏫 蚂蚁和西瓜+主动收玩具 | 😴午睡55m | 💧400ml | 🔤 car+mouse+beans+orange✅"
+    "status": "☀️ 7:58起床 | 😴 22:24入睡 | 📚 熊熊面包店+超级故事王 | 🏫 蚂蚁和西瓜+主动收玩具 | 😴午睡55m | 💧400ml | 🔤 car+mouse+beans+orange✅"
   },
   "dailyNotes": [
     {
