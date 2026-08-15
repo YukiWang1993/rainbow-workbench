@@ -753,11 +753,11 @@
   ],
   "today": {
     "wake": "08:02",
-    "sleep": "23:02",
+    "sleep": "",
     "songs": "",
-    "book": "熊熊面包店一起来做面包",
-    "words": "hair, whale",
-    "status": "☀️ 8:02起床 | 📚 熊熊面包店一起来做面包 | 🏫 种下西瓜籽+S弯运球 | 😴午睡55m | 💧400ml | 🔤 hair+whale"
+    "book": "",
+    "words": "",
+    "status": "☀️ 8:02起床"
   },
   "dailyNotes": [
     {
