@@ -749,6 +749,18 @@
       "word": "whale",
       "status": "learning",
       "mnemonic": "双手比划一条大鱼游啊游，威哦威哦——大鲸鱼whale"
+    },
+    {
+      "date": "2026-08-15",
+      "word": "moon",
+      "status": "learning",
+      "mnemonic": "双手比划圆圆的大月亮，木嗯木嗯——月亮moon"
+    },
+    {
+      "date": "2026-08-15",
+      "word": "bee",
+      "status": "learning",
+      "mnemonic": "手指做小蜜蜂嗡嗡飞，哔哔——小蜜蜂bee"
     }
   ],
   "today": {
@@ -756,8 +768,8 @@
     "sleep": "",
     "songs": "",
     "book": "",
-    "words": "",
-    "status": "☀️ 8:02起床"
+    "words": "moon, bee",
+    "status": "☀️ 8:02起床 | 🔤 moon+bee"
   },
   "dailyNotes": [
     {
