@@ -66,9 +66,9 @@
     {
       "date": "2026-08-15",
       "sleep": "21:41",
-      "wake": "08:02",
+      "wake": "09:03",
       "nap": "",
-      "total": "10h21m"
+      "total": "11h22m"
     },
     {
       "date": "2026-08-14",
@@ -771,12 +771,12 @@
     }
   ],
   "today": {
-    "wake": "08:02",
-    "sleep": "21:41",
+    "wake": "09:03",
+    "sleep": "",
     "songs": "",
     "book": "",
-    "words": "moon, bee",
-    "status": "☀️ 8:02起床 | 🔤 moon+bee | 😴 21:41入睡(无午睡)"
+    "words": "",
+    "status": "☀️ 9:03起床"
   },
   "dailyNotes": [
     {
