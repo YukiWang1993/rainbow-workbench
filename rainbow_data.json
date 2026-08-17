@@ -171,6 +171,10 @@
   ],
   "reading": [
     {
+      "date": "2026-08-16",
+      "books": "夏美什么都能变"
+    },
+    {
       "date": "2026-08-12",
       "books": "小红和小粉、理发师巴鲁巴鲁到森林去、哈哈哈早上好"
     },
@@ -775,15 +779,21 @@
       "word": "bee",
       "status": "learning",
       "mnemonic": "手指做小蜜蜂嗡嗡飞，哔哔——小蜜蜂bee"
+    },
+    {
+      "date": "2026-08-16",
+      "word": "nose",
+      "status": "learning",
+      "mnemonic": "用手指点点鼻子，诺斯诺斯——鼻子nose"
     }
   ],
   "today": {
     "wake": "08:00",
     "sleep": "",
     "songs": "",
-    "book": "",
+    "book": "夏美什么都能变",
     "words": "",
-    "status": "☀️ 8:00起床"
+    "status": "☀️ 8:00起床 | 📚 夏美什么都能变"
   },
   "dailyNotes": [
     {
