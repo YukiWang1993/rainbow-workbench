@@ -91,11 +91,6 @@ const DEFAULT = {
     {date:"2026-08-05",sleep:"22:32",wake:"08:40",nap:"1h30m",total:"11h38m"},
     {date:"2026-08-04",sleep:"22:13",wake:"07:53",nap:"1h35m",total:"11h15m"}
   ],
-  sss:[
-    {date:"2026-08-06",songs:"Are You Hungry / In the Kitchen / Walking Down the Street"},
-    {date:"2026-08-05",songs:"One for You One for Me / Follow Me / Let's Take Turns"},
-    {date:"2026-08-04",songs:"Count and Move / Six in the Bed / Seven Steps"}
-  ],
   reading:[
     {date:"2026-08-07",books:"屁屁侦探 消失的人气甜点、小红和小黑、揉一揉啊捏一捏"},
     {date:"2026-08-06",books:"小猫汤米 怪怪幼儿园、哈哈哈早上好"},
@@ -178,7 +173,7 @@ const DEFAULT = {
     {date:"2026-08-07",word:"ant",status:"learning"},
     {date:"2026-08-07",word:"bear",status:"learning"}
   ],
-  today:{wake:"07:57",sleep:"21:38",songs:"",book:"屁屁侦探 消失的人气甜点、小红和小黑、揉一揉啊捏一捏",status:"😊 晚上听了屁屁侦探 消失的人气甜点"},
+  today:{wake:"07:57",sleep:"21:38",book:"屁屁侦探 消失的人气甜点、小红和小黑、揉一揉啊捏一捏",status:"😊 晚上听了屁屁侦探 消失的人气甜点"},
   dailyNotes:[{date:"2026-08-07",content:"晚上听了屁屁侦探 消失的人气甜点（全系列七本都有）\n早上读了小红和小黑、揉一揉啊捏一捏"},
     {date:"2026-08-06",content:"彩虹晚上自己玩磁力片30分钟，专注力不错\n在园大便训练成功，坐马桶拉粑粑 🎉\n今天社交活跃，和小朋友互动很好"}],
   dailyBriefs:[{date:"2026-08-07",content:"睡眠：21:38入睡，07:57起床，午睡1h30m（共11h49m）\n绘本：屁屁侦探 消失的人气甜点、小红和小黑、揉一揉啊捏一捏\n🔤 单词：新掌握 banana, bird, fish, monkey, strawberry, blueberry（6个）\n学习中：rabbit, ant, bear（3个）\n🧠 新知：立秋·新朋友（在园主题）\n在园：立秋·新朋友主题\n情绪：😊"},
@@ -188,7 +183,7 @@ const DEFAULT = {
 };
 
 // ========== 数据管理 ==========
-const DATA_URL='https://yukiwang1993.github.io/rainbow-workbench/rainbow_data.json?v=202608282353';
+const DATA_URL='https://yukiwang1993.github.io/rainbow-workbench/rainbow_data.json?v=202608282356';
 let data=null;
 async function loadData(){
   var local=JSON.parse(localStorage.getItem('rainbow_wb')||'null');
@@ -336,7 +331,6 @@ function render(){
   h+='<div class="card full"><h3>📋 今日概览 <span class="btns"><button class="btn btn-edit" onclick="editToday()">✏️</button></span></h3>';
   h+='<div class="stat-row"><span>起床</span><span class="stat-val">'+esc(d.today.wake)+'</span></div>';
   h+='<div class="stat-row"><span>'+(d.today.sleep?'今晚入睡':'昨晚入睡')+'</span><span class="stat-val">'+esc(d.today.sleep||(d.sleep.length>0?d.sleep[0].sleep:''))+'</span></div>';
-  h+='<div class="stat-row"><span>今日儿歌</span><span class="stat-val">'+esc(d.today.songs)+'</span></div>';
   h+='<div class="stat-row"><span>今早绘本</span><span class="stat-val">'+esc(d.today.book)+'</span></div>';
   h+='<div class="stat-row"><span>今日状态</span><span class="stat-val">'+esc(d.today.status)+'</span></div></div>';
 
@@ -368,17 +362,6 @@ function render(){
   });
   h+='</div>';
 
-  // SSS儿歌（最近7天）
-  h+='<div class="card"><h3>🎵 SSS儿歌 <span class="btns"><button class="btn btn-add" onclick="addSSS()">+</button></span></h3>';
-  var recentSSS = d.sss.filter(function(s){return isRecent(s.date,7);});
-  if(!recentSSS.length)h+='<div class="empty">暂无</div>';
-  recentSSS.forEach(function(s){
-    var tags=s.songs.split(' / ');
-    h+='<div style="margin-bottom:6px"><div style="font-size:11px;color:#999">'+s.date.slice(5)+'</div>';
-    tags.forEach(function(t){h+='<span class="tag">'+esc(t)+'</span> '});
-    h+='</div>';
-  });
-  h+='</div>';
 
   // 阅读（最近7天）
   h+='<div class="card full"><h3>📚 阅读 <span class="btns"><button class="btn btn-add" onclick="addReading()">+</button></span></h3>';
@@ -600,7 +583,6 @@ function editToday(){
   showModal('编辑今日概览',[
     {key:'wake',label:'起床时间',value:data.today.wake},
     {key:'sleep',label:'入睡时间',value:data.today.sleep},
-    {key:'songs',label:'今日儿歌',value:data.today.songs},
     {key:'book',label:'今早绘本',value:data.today.book},
     {key:'status',label:'今日状态',value:data.today.status}
   ],function(v){data.today=v;});
@@ -635,12 +617,6 @@ function editSleep(i){
     {key:'nap',label:'午睡',value:s.nap},
     {key:'total',label:'总睡眠',value:s.total}
   ],function(v){data.sleep[i]=v;});
-}
-function addSSS(){
-  showModal('新增SSS儿歌',[
-    {key:'date',label:'日期',value:'2026-08-06'},
-    {key:'songs',label:'儿歌（用 / 分隔）',value:''}
-  ],function(v){data.sss.unshift(v);});
 }
 function addReading(){
   showModal('新增阅读记录',[

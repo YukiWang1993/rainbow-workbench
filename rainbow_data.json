@@ -244,24 +244,6 @@
       "total": "11h15m"
     }
   ],
-  "sss": [
-    {
-      "date": "2026-08-20",
-      "songs": "Old MacDonald / Row Row Row Your Boat"
-    },
-    {
-      "date": "2026-08-06",
-      "songs": "Are You Hungry / In the Kitchen / Walking Down the Street"
-    },
-    {
-      "date": "2026-08-05",
-      "songs": "One for You One for Me / Follow Me / Let's Take Turns"
-    },
-    {
-      "date": "2026-08-04",
-      "songs": "Count and Move / Six in the Bed / Seven Steps"
-    }
-  ],
   "reading": [
     {
       "date": "2026-08-27",
@@ -1037,7 +1019,6 @@
   "today": {
     "wake": "07:30",
     "sleep": "22:28",
-    "songs": "",
     "book": "",
     "words": "",
     "status": "🌙 22:28入睡"
@@ -1142,7 +1123,7 @@
       "content": "📅 彩虹8月月报（待补充）"
     }
   ],
-  "updated": "2026-08-28T23:53:00+08:00",
+  "updated": "2026-08-28T23:56:00+08:00",
   "oxford": [
     {
       "date": "2026-08-28",
