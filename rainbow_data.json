@@ -772,25 +772,25 @@
     {
       "date": "2026-08-20",
       "word": "tree",
-      "status": "learning",
+      "status": "mastered",
       "mnemonic": "双手比划高高的大树，吹吹吹——树tree"
     },
     {
       "date": "2026-08-19",
       "word": "hello",
-      "status": "learning",
+      "status": "mastered",
       "mnemonic": "挥挥小手打招呼，哈喽哈喽——你好hello"
     },
     {
       "date": "2026-08-19",
       "word": "goodbye",
-      "status": "learning",
+      "status": "mastered",
       "mnemonic": "挥挥小手说拜拜，古德拜——再见goodbye"
     },
     {
       "date": "2026-08-19",
       "word": "water",
-      "status": "learning",
+      "status": "mastered",
       "mnemonic": "双手捧起来喝水，哇特哇特——水water"
     },
     {
@@ -1030,7 +1030,7 @@
     {
       "date": "2026-08-16",
       "word": "nose",
-      "status": "learning",
+      "status": "mastered",
       "mnemonic": "用手指点点鼻子，诺斯诺斯——鼻子nose"
     }
   ],
@@ -1142,7 +1142,7 @@
       "content": "📅 彩虹8月月报（待补充）"
     }
   ],
-  "updated": "2026-08-28T23:52:00+08:00",
+  "updated": "2026-08-28T23:53:00+08:00",
   "oxford": [
     {
       "date": "2026-08-28",
