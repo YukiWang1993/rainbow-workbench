@@ -734,6 +734,156 @@
   ],
   "words": [
     {
+      "date": "2026-08-28",
+      "word": "best",
+      "status": "learning",
+      "mnemonic": "竖起大拇指，best best——最棒啦"
+    },
+    {
+      "date": "2026-08-28",
+      "word": "top",
+      "status": "learning",
+      "mnemonic": "手指点到最高处，top top——第一名"
+    },
+    {
+      "date": "2026-08-28",
+      "word": "slide",
+      "status": "learning",
+      "mnemonic": "小手从高往低滑，slide slide——滑滑梯"
+    },
+    {
+      "date": "2026-08-28",
+      "word": "like",
+      "status": "learning",
+      "mnemonic": "双手比个爱心，来克来克——喜欢 like"
+    },
+    {
+      "date": "2026-08-28",
+      "word": "up",
+      "status": "learning",
+      "mnemonic": "食指用力指向天，啊噗 up——向上"
+    },
+    {
+      "date": "2026-08-27",
+      "word": "box",
+      "status": "learning",
+      "mnemonic": "双手比划一个方盒子，box box——盒子"
+    },
+    {
+      "date": "2026-08-27",
+      "word": "flowers",
+      "status": "learning",
+      "mnemonic": "双手张开比划花朵，花~flowers"
+    },
+    {
+      "date": "2026-08-26",
+      "word": "on",
+      "status": "learning",
+      "mnemonic": "一只手掌叠在另一只上，昂——在上面 on"
+    },
+    {
+      "date": "2026-08-25",
+      "word": "little",
+      "status": "learning",
+      "mnemonic": "手指捏出一点点，little little——小小的"
+    },
+    {
+      "date": "2026-08-24",
+      "word": "day",
+      "status": "learning",
+      "mnemonic": "比划太阳升起来，day day——一整天"
+    },
+    {
+      "date": "2026-08-24",
+      "word": "windy",
+      "status": "learning",
+      "mnemonic": "双手左右摆像风吹，温滴温滴——刮风 windy"
+    },
+    {
+      "date": "2026-08-24",
+      "word": "wet",
+      "status": "learning",
+      "mnemonic": "甩甩手上的水，wet wet——湿乎乎"
+    },
+    {
+      "date": "2026-08-24",
+      "word": "sunny",
+      "status": "learning",
+      "mnemonic": "双手比划大太阳，萨尼萨尼——晴朗 sunny"
+    },
+    {
+      "date": "2026-08-23",
+      "word": "back",
+      "status": "learning",
+      "mnemonic": "招招手让人回来，拜克拜克——回来 back"
+    },
+    {
+      "date": "2026-08-23",
+      "word": "away",
+      "status": "learning",
+      "mnemonic": "双手往外推一推，阿伟阿伟——走开 away"
+    },
+    {
+      "date": "2026-08-23",
+      "word": "go",
+      "status": "learning",
+      "mnemonic": "小手用力往前挥，狗——冲呀 go"
+    },
+    {
+      "date": "2026-08-22",
+      "word": "my",
+      "status": "learning",
+      "mnemonic": "双手环抱自己，买买——我的 my"
+    },
+    {
+      "date": "2026-08-21",
+      "word": "look",
+      "status": "learning",
+      "mnemonic": "手搭凉棚望一望，路克路克——看一看 look"
+    },
+    {
+      "date": "2026-08-21",
+      "word": "feet",
+      "status": "learning",
+      "mnemonic": "跺跺小脚，飞踢飞踢——脚 feet"
+    },
+    {
+      "date": "2026-08-21",
+      "word": "big",
+      "status": "learning",
+      "mnemonic": "双手张开画个大圈，big big——好大呀"
+    },
+    {
+      "date": "2026-08-20",
+      "word": "blue",
+      "status": "learning",
+      "mnemonic": "比划蓝蓝的天空大海，不路不路——蓝色 blue"
+    },
+    {
+      "date": "2026-08-20",
+      "word": "red",
+      "status": "learning",
+      "mnemonic": "摸摸红红的脸蛋，润润的——红色 red"
+    },
+    {
+      "date": "2026-08-19",
+      "word": "me",
+      "status": "learning",
+      "mnemonic": "双手拍拍自己胸口，咪咪——是我 me"
+    },
+    {
+      "date": "2026-08-19",
+      "word": "you",
+      "status": "learning",
+      "mnemonic": "手指点点对方，又又又——你 you"
+    },
+    {
+      "date": "2026-08-19",
+      "word": "see",
+      "status": "learning",
+      "mnemonic": "手指比划眼睛向前看，西——看见啦 see"
+    },
+    {
       "date": "2026-08-21",
       "word": "cloud",
       "status": "learning",
@@ -1123,7 +1273,7 @@
       "content": "📅 彩虹8月月报（待补充）"
     }
   ],
-  "updated": "2026-08-28T23:56:00+08:00",
+  "updated": "2026-08-29T00:05:00+08:00",
   "oxford": [
     {
       "date": "2026-08-28",
