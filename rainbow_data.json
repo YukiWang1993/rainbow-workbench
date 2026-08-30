@@ -70,7 +70,7 @@
   "sleep": [
     {
       "date": "2026-08-30",
-      "sleep": "",
+      "sleep": "23:00",
       "wake": "",
       "nap": "1h45m",
       "total": ""
@@ -1098,10 +1098,10 @@
   ],
   "today": {
     "wake": "8:30",
-    "sleep": "",
+    "sleep": "23:00",
     "book": "",
     "words": "",
-    "status": "☀️ 8:30起床"
+    "status": "🌙 23:00入睡"
   },
   "dailyNotes": [
     {
