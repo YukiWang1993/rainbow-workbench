@@ -755,6 +755,12 @@
   ],
   "words": [
     {
+      "word": "cut",
+      "status": "learning",
+      "date": "2026-08-31",
+      "mnemonic": "两根手指变剪刀，咔嚓剪一下——cut"
+    },
+    {
       "word": "bed",
       "status": "learning",
       "date": "2026-08-31",
@@ -1250,7 +1256,7 @@
   "oxford": [
     {
       "date": "2026-08-31",
-      "lesson": "第十四集"
+      "lesson": "第十五集"
     },
     {
       "date": "2026-08-30",
