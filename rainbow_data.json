@@ -748,10 +748,70 @@
   ],
   "words": [
     {
-      "word": "fetch",
+      "word": "bed",
+      "status": "learning",
+      "date": "2026-08-31",
+      "mnemonic": "躺下枕头睡觉觉，贝德——床 bed"
+    },
+    {
+      "word": "hit",
+      "status": "learning",
+      "date": "2026-08-30",
+      "mnemonic": "挥挥小手拍一拍，黑特——击打 hit"
+    },
+    {
+      "word": "stop",
       "status": "learning",
       "date": "2026-08-28",
-      "mnemonic": "弯腰伸手捡球球，飞迟飞迟——去捡 fetch"
+      "mnemonic": "手掌向前推喊停，斯道普——停 stop"
+    },
+    {
+      "word": "paint",
+      "status": "learning",
+      "date": "2026-08-26",
+      "mnemonic": "小手握笔画呀画，佩恩特——画画 paint"
+    },
+    {
+      "word": "face",
+      "status": "learning",
+      "date": "2026-08-26",
+      "mnemonic": "双手捧着小脸蛋，飞斯——脸 face"
+    },
+    {
+      "word": "dad",
+      "status": "learning",
+      "date": "2026-08-25",
+      "mnemonic": "拍拍爸爸的肩膀，大大——爸爸 dad"
+    },
+    {
+      "word": "mum",
+      "status": "learning",
+      "date": "2026-08-25",
+      "mnemonic": "张开双手抱抱妈妈，麻麻——妈妈 mum"
+    },
+    {
+      "word": "cap",
+      "status": "learning",
+      "date": "2026-08-24",
+      "mnemonic": "小手拍拍脑瓜戴帽子，凯普——棒球帽 cap"
+    },
+    {
+      "word": "shoes",
+      "status": "learning",
+      "date": "2026-08-22",
+      "mnemonic": "跺跺小脚穿新鞋，舒兹——鞋子 shoes"
+    },
+    {
+      "word": "brush",
+      "status": "learning",
+      "date": "2026-08-22",
+      "mnemonic": "小手上下刷刷牙，布拉西——刷子 brush"
+    },
+    {
+      "word": "bucket",
+      "status": "learning",
+      "date": "2026-08-21",
+      "mnemonic": "双手拎水桶摇一摇，巴可特——水桶 bucket"
     },
     {
       "word": "box",
@@ -760,46 +820,10 @@
       "mnemonic": "双手比划方盒盒，抱克斯——盒子 box"
     },
     {
-      "word": "street",
-      "status": "learning",
-      "date": "2026-08-26",
-      "mnemonic": "食指划一条长路，丝脆特——马路 street"
-    },
-    {
-      "word": "swing",
-      "status": "learning",
-      "date": "2026-08-25",
-      "mnemonic": "身体前后荡呀荡，丝温丝温——荡秋千 swing"
-    },
-    {
-      "word": "library",
-      "status": "learning",
-      "date": "2026-08-24",
-      "mnemonic": "手指放嘴边嘘安静，来布蕊蕊——图书馆 library"
-    },
-    {
       "word": "teddy",
       "status": "learning",
       "date": "2026-08-23",
       "mnemonic": "双臂抱抱小熊熊，泰迪泰迪——熊熊 teddy"
-    },
-    {
-      "word": "haircut",
-      "status": "learning",
-      "date": "2026-08-22",
-      "mnemonic": "手指咔嚓剪头发，嗨儿卡特——剪头发 haircut"
-    },
-    {
-      "word": "look",
-      "status": "learning",
-      "date": "2026-08-21",
-      "mnemonic": "手搭凉棚望一望，路克路克——看一看 look"
-    },
-    {
-      "word": "school",
-      "status": "learning",
-      "date": "2026-08-19",
-      "mnemonic": "小手比划背书包，丝酷丝酷——去学校 school"
     },
     {
       "date": "2026-08-21",
@@ -1214,6 +1238,14 @@
   "updated": "2026-08-29T00:05:00+08:00",
   "oxford": [
     {
+      "date": "2026-08-31",
+      "lesson": "第十四集"
+    },
+    {
+      "date": "2026-08-30",
+      "lesson": "第十三集"
+    },
+    {
       "date": "2026-08-29",
       "lesson": "第十二集"
     },
@@ -1251,7 +1283,7 @@
     },
     {
       "date": "2026-08-20",
-      "lesson": "第二节电子课"
+      "lesson": "第二集"
     },
     {
       "date": "2026-08-19",
