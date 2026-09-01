@@ -69,6 +69,13 @@
   ],
   "sleep": [
     {
+      "date": "2026-09-01",
+      "sleep": "20:55",
+      "wake": "",
+      "nap": "",
+      "total": ""
+    },
+    {
       "date": "2026-08-31",
       "sleep": "22:15",
       "wake": "7:45",
@@ -755,6 +762,30 @@
   ],
   "words": [
     {
+      "word": "see",
+      "status": "learning",
+      "date": "2026-09-01",
+      "mnemonic": "手指指眼睛看一看，西——看见 see"
+    },
+    {
+      "word": "mirror",
+      "status": "learning",
+      "date": "2026-09-01",
+      "mnemonic": "照照小镜子，米若——镜子 mirror"
+    },
+    {
+      "word": "big",
+      "status": "learning",
+      "date": "2026-09-01",
+      "mnemonic": "双手张开比大大，比格——大 big"
+    },
+    {
+      "word": "little",
+      "status": "learning",
+      "date": "2026-09-01",
+      "mnemonic": "拇指食指捏小小，利透——小 little"
+    },
+    {
       "word": "cut",
       "status": "learning",
       "date": "2026-08-31",
@@ -1134,11 +1165,11 @@
     }
   ],
   "today": {
-    "wake": "7:45",
-    "sleep": "",
+    "wake": "",
+    "sleep": "20:55",
     "book": "",
     "words": "",
-    "status": "☀️ 7:45起床"
+    "status": "🌙 20:55入睡"
   },
   "dailyNotes": [
     {
@@ -1254,6 +1285,10 @@
   ],
   "updated": "2026-08-29T00:05:00+08:00",
   "oxford": [
+    {
+      "date": "2026-09-01",
+      "lesson": "第十七集"
+    },
     {
       "date": "2026-08-31",
       "lesson": "第十五集"
